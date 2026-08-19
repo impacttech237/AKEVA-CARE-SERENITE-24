@@ -66,7 +66,7 @@ export default function Footer() {
                 <Link href="/douala">Douala</Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link href="/demander-un-devis">Demander un devis</Link>
               </li>
             </ul>
           </div>

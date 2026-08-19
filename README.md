@@ -29,4 +29,4 @@ Les demandes de devis s'ouvrent dans WhatsApp avec un message prérempli.
 
 ## Pages
 
-Accueil, services (9 pages), familles, fonctionnement, formules, devis, FAQ, diaspora, villes (Yaoundé, Douala), à propos, conseils, contact, mentions, confidentialité.
+Accueil, services (9 pages), familles, fonctionnement, formules, devis, FAQ, diaspora, villes (Yaoundé, Douala), à propos, conseils, mentions, confidentialité.

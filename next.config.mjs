@@ -6,6 +6,11 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      { source: "/contact", destination: "/demander-un-devis", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
