@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-top">
         <div className="footer-brand">
-          <Logo invert />
+          <Logo />
           <p>{site.tagline}</p>
           <div className="btn-row">
             <a className="btn btn-primary" href={whatsappLink()} target="_blank" rel="noopener noreferrer">

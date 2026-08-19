@@ -315,67 +315,33 @@ h3,
 .logo-pill {
   display: inline-flex;
   align-items: center;
-  padding: 7px 16px 7px 8px;
+  background: #050505;
+  padding: 4px 14px 4px 10px;
   flex-shrink: 0;
 }
 
-.logo-compact {
+.logo-compact,
+.logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
-  font-size: 1.15rem;
-  letter-spacing: -0.03em;
-  font-weight: 550;
 }
 
-.logo-heart {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--terra);
-  color: #fff;
-  display: grid;
-  place-items: center;
+.logo-img {
+  display: block;
+  height: auto;
+  object-fit: contain;
 }
 
-.logo-heart svg {
-  width: 16px;
-  height: 16px;
+.logo-img--nav {
+  height: 42px;
+  width: auto;
+  max-width: 148px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  color: var(--terra);
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-
-.logo-text strong {
-  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
-  font-size: 1.12rem;
-  font-weight: 550;
-  letter-spacing: -0.03em;
-}
-
-.logo-text span {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 500;
+.logo-img--foot {
+  height: 72px;
+  width: auto;
+  max-width: 220px;
 }
 
 .nav-pill {
