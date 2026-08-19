@@ -11,7 +11,7 @@ export default function CTABanner({
   return (
     <section className="section" style={{ paddingTop: 0 }}>
       <div className="container">
-        <div className="cta-band">
+        <div className="cta-band" style={{ background: "var(--forest)" }}>
           <div>
             <p className="eyebrow" style={{ color: "#ffd7c4" }}>
               Akeva Care · Yaoundé & Douala

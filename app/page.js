@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FAQList from "@/components/FAQList";
-import CTABanner from "@/components/CTABanner";
 import { Arrow } from "@/components/Icons";
 import { site, whatsappLink } from "@/lib/site";
 import { services } from "@/lib/services";
-import { faqs, steps, testimonials, whyPoints } from "@/lib/content";
+import { faqs, steps, testimonials } from "@/lib/content";
 
 const accompany = [
   {
@@ -36,7 +35,6 @@ export default function HomePage() {
       <section className="hero">
         <div className="container-wide hero-grid">
           <div>
-            <p className="eyebrow">Yaoundé · Douala · Présence 24h/24</p>
             <h1>
               <span className="reveal-line">
                 <span>Votre proche a besoin</span>
@@ -44,7 +42,7 @@ export default function HomePage() {
               <span className="reveal-line">
                 <span>d'un accompagnement fiable ?</span>
               </span>
-              <span className="reveal-line italic" style={{ color: "var(--terra)", marginTop: 8 }}>
+              <span className="reveal-line italic" style={{ color: "var(--terra)", marginTop: 10 }}>
                 <span>Nous sommes là.</span>
               </span>
             </h1>
@@ -66,78 +64,209 @@ export default function HomePage() {
                 Contacter Akeva Care
               </a>
             </div>
-            <p className="small mt-s">{site.tagline}</p>
           </div>
 
-          <div className="hero-visual">
-            <div className="shot">
-              <img
-                src="/images/hero-home.jpg"
-                alt="Accompagnante Akeva Care auprès d'une personne âgée à domicile"
-              />
-              <span className="float-badge">Présence 24h/24</span>
-            </div>
-            <div className="shot">
-              <img src="/images/hero-hands.jpg" alt="Mains tenues, présence rassurante" />
-            </div>
-            <div className="shot">
-              <img
-                src="/images/hero-garden.jpg"
-                alt="Promenade accompagnée d'une personne âgée"
-              />
-            </div>
+          <div className="hero-photo">
+            <img
+              src="/images/hero-home.jpg"
+              alt="Accompagnante Akeva Care auprès d'une personne âgée à domicile"
+            />
+            <span className="float-badge">Yaoundé · Douala · 24h/24</span>
           </div>
         </div>
       </section>
 
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <span key={i}>
-              Yaoundé · Douala · France · Belgique · Canada · Suisse · Luxembourg · États-Unis · Diaspora · Présence 24h/24 · Domicile · Hôpital ·&nbsp;
-            </span>
-          ))}
+      <section className="manifesto">
+        <div className="container">
+          <p>
+            Prendre soin de vos proches comme s'ils étaient les nôtres — avec
+            cœur, dignité et confiance.
+          </p>
+          <svg className="mark-heart" viewBox="0 0 40 40" aria-hidden="true">
+            <path
+              d="M20 33s-11.5-7.2-11.5-15.2C8.5 13 12.2 10 16 10c2.2 0 3.7 1 4 2.2C20.3 11 21.8 10 24 10c3.8 0 7.5 3 7.5 7.8C31.5 25.8 20 33 20 33Z"
+              fill="currentColor"
+            />
+          </svg>
         </div>
-      </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container panel-split">
+          <Reveal className="media-frame" style={{ minHeight: 340 }}>
+            <img src="/images/svc-nuit.jpg" alt="Présence attentive auprès d'un proche" />
+          </Reveal>
+          <Reveal className="panel panel-green" delay={80}>
+            <h2>Organiser l'accompagnement d'un parent peut être épuisant, coûteux, et solitaire.</h2>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container split">
+          <Reveal>
+            <h2>Préserver l'autonomie, avec un accompagnement pensé pour la personne.</h2>
+            <div className="service-mini">
+              {accompany.slice(0, 3).map((item) => (
+                <article key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p className="muted">{item.text}</p>
+                  <Link className="link-more" href={item.href}>
+                    En savoir plus <Arrow />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal className="media-frame" delay={80} style={{ minHeight: 420 }}>
+            <img
+              src="/images/hero-garden.jpg"
+              alt="Promenade accompagnée"
+              style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: 420 }}
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="story">
+        <div className="container">
+          <div className="story-top">
+            <Reveal className="panel panel-cream">
+              <h2>Vous n'aviez pas prévu cette épreuve</h2>
+            </Reveal>
+            <Reveal className="panel panel-orange" delay={80}>
+              <h2>mais elle est devenue votre quotidien.</h2>
+            </Reveal>
+          </div>
+          <Reveal className="story-bottom" delay={120}>
+            <div className="panel panel-green">
+              <h2>
+                C'est pour cela que nous avons créé <em>Akeva Care</em>
+              </h2>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container">
+          <Reveal className="section-head center">
+            <h2>Un accompagnement professionnel et humain, à domicile et à l'hôpital.</h2>
+            <p className="lead" style={{ textAlign: "center" }}>
+              {site.tagline} Présence organisée à Yaoundé et Douala, y compris
+              lorsque vous vivez à l'étranger.
+            </p>
+          </Reveal>
+          <Reveal className="media-frame" style={{ minHeight: 380, position: "relative" }}>
+            <img
+              src="/images/cta-wide.jpg"
+              alt="Accompagnement en extérieur"
+              style={{ width: "100%", height: "min(62vw, 520px)", objectFit: "cover" }}
+            />
+            <span className="caption-pill">
+              Le premier réseau d'accompagnement conçu pour les familles — sur place et depuis loin.
+            </span>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="section" style={{ paddingTop: 20 }}>
+        <div className="container bento">
+          <Reveal className="stat-card">
+            <strong>24/7</strong>
+            <span>Organisation possible, jour et nuit</span>
+          </Reveal>
+          <Reveal className="bento-photo" delay={60}>
+            <img src="/images/svc-jour.jpg" alt="Présence de jour à domicile" />
+          </Reveal>
+          <Reveal className="stat-card" delay={80}>
+            <strong>2</strong>
+            <span>Villes — Yaoundé et Douala</span>
+          </Reveal>
+          <Reveal className="stat-card" delay={100}>
+            <strong>1</strong>
+            <span>Interlocuteur pour toute la famille</span>
+          </Reveal>
+          <Reveal className="stat-card" delay={140}>
+            <strong>5</strong>
+            <span>Étapes, de l'appel à la présence</span>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container">
+          <Reveal className="heart-band">
+            <svg className="mark-heart" viewBox="0 0 40 40" aria-hidden="true" style={{ margin: 0 }}>
+              <path
+                d="M20 33s-11.5-7.2-11.5-15.2C8.5 13 12.2 10 16 10c2.2 0 3.7 1 4 2.2C20.3 11 21.8 10 24 10c3.8 0 7.5 3 7.5 7.8C31.5 25.8 20 33 20 33Z"
+                fill="currentColor"
+              />
+            </svg>
+            <div>
+              <h2>Construire le bon accompagnement dès le début.</h2>
+              <p className="mt-s" style={{ color: "rgba(243,238,230,.72)", maxWidth: "42ch" }}>
+                Que vous commenciez aujourd'hui ou que vous cherchiez à mieux
+                organiser ce qui existe déjà : un conseiller écoute, évalue, et
+                propose une présence claire.
+              </p>
+              <div className="btn-row mt-m">
+                <a
+                  className="btn btn-primary"
+                  href={whatsappLink("Bonjour Akeva Care, je souhaite parler à un conseiller.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Parler à un conseiller <Arrow />
+                </a>
+                <Link className="btn btn-ghost" href="/a-propos" style={{ color: "#f3eee6", borderColor: "rgba(243,238,230,.25)" }}>
+                  À propos
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 10 }}>
         <div className="container">
           <Reveal className="section-head">
-            <p className="eyebrow">Nous pouvons vous accompagner</p>
-            <h2>Là où votre proche a besoin de quelqu'un.</h2>
+            <p className="eyebrow">Des familles nous écrivent</p>
+            <h2>Des mots simples, des situations réelles.</h2>
           </Reveal>
-          <div className="grid-4">
-            {accompany.map((item, i) => (
-              <Reveal key={item.title} delay={i * 80}>
-                <Link href={item.href} className="card-plain" style={{ display: "block", height: "100%" }}>
-                  <p className="num">0{i + 1}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                  <span className="link-more">
-                    En savoir plus <Arrow />
+          <div className="grid-3">
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} className="card-plain" delay={i * 80}>
+                <p className="quote">“{t.quote}”</p>
+                <p className="mt-m">
+                  <strong>{t.name}</strong>
+                  <span className="small" style={{ display: "block" }}>
+                    {t.role}
                   </span>
-                </Link>
+                </p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section band-ink">
-        <div className="container">
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container solutions">
           <Reveal>
-            <p className="eyebrow">La réalité de beaucoup de familles</p>
-            <h2 style={{ maxWidth: "18ch" }}>
-              Vous n'aviez pas prévu d'être aussi loin.
-              <span className="italic" style={{ display: "block", color: "var(--terra-soft)", marginTop: 12 }}>
-                Ou aussi fatigués.
-              </span>
-            </h2>
-            <p className="lead mt-m" style={{ color: "rgba(246,239,230,.72)" }}>
-              C'est pour cela qu'Akeva Care existe : prendre soin de vos
-              proches, même lorsque vous ne pouvez pas être là.
+            <h2>Des solutions pour chaque moment de l'accompagnement.</h2>
+            <p className="lead mt-s">
+              Jour, nuit, hôpital, 24h/24, diaspora : on compose selon la
+              situation, pas selon une grille figée.
             </p>
           </Reveal>
+          <div className="solution-list">
+            {services.map((s) => (
+              <Link key={s.slug} href={`/${s.slug}`}>
+                {s.title}
+                <span>En savoir plus</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -165,53 +294,10 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
-          <div className="mt-l">
-            <Link className="btn btn-ghost" href="/services">
-              Tous les services <Arrow />
-            </Link>
-          </div>
         </div>
       </section>
 
-      <section className="section band-ink">
-        <div className="container why-grid">
-          <Reveal>
-            <div className="media-frame" style={{ minHeight: 420 }}>
-              <div className="img-reveal" style={{ minHeight: 420, borderRadius: 28 }}>
-                <img
-                  src="/images/svc-ages.jpg"
-                  alt="Personne âgée accompagnée avec dignité"
-                  style={{ width: "100%", height: 520, objectFit: "cover" }}
-                />
-              </div>
-            </div>
-          </Reveal>
-          <div>
-            <Reveal>
-              <p className="eyebrow">Pourquoi Akeva Care ?</p>
-              <h2>Parce que votre proche mérite plus qu'une simple présence.</h2>
-            </Reveal>
-            <div className="why-list mt-m">
-              {whyPoints.map((p, i) => (
-                <Reveal key={p.title} className="why-item" delay={i * 40}>
-                  <span className="num">0{i + 1}</span>
-                  <div>
-                    <strong>{p.title}</strong>
-                    <p className="small">{p.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal className="mt-m">
-              <a className="btn btn-primary" href={whatsappLink("Bonjour Akeva Care, je souhaite parler à un conseiller.")} target="_blank" rel="noopener noreferrer">
-                Parler à un conseiller <Arrow />
-              </a>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
+      <section className="section" style={{ paddingTop: 10 }}>
         <div className="container">
           <Reveal className="section-head center">
             <p className="eyebrow">Comment ça marche ?</p>
@@ -229,97 +315,51 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--paper)" }}>
-        <div className="container split">
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container grid-2">
           <Reveal>
-            <p className="eyebrow">Pour la diaspora</p>
-            <h2>Vous vivez loin. Votre parent est au Cameroun.</h2>
-            <p className="lead mt-s">
-              France, Belgique, Canada, Suisse, Luxembourg, États-Unis : nous
-              organisons l'accompagnement à distance, avec un interlocuteur
-              unique et des comptes-rendus réguliers.
-            </p>
-            <div className="btn-row mt-m">
-              <Link className="btn btn-primary" href="/diaspora">
-                Organiser depuis l'étranger <Arrow />
-              </Link>
-              <Link className="btn btn-ghost" href="/demander-un-devis">
-                Demander un devis
-              </Link>
-            </div>
+            <Link href="/yaounde" className="city-card" style={{ minHeight: 340 }}>
+              <img src="/images/yaounde.jpg" alt="Yaoundé" />
+              <span className="shade" />
+              <span className="txt">
+                <p className="eyebrow" style={{ color: "#ffd7c4" }}>Capitale</p>
+                <h3>Yaoundé</h3>
+              </span>
+            </Link>
           </Reveal>
-          <Reveal delay={80} className="collage">
-            <div className="media-frame tall">
-              <img src="/images/hero-home.jpg" alt="" />
-            </div>
-            <div>
-              <div className="media-frame wide">
-                <img src="/images/svc-24h.jpg" alt="" />
-              </div>
-              <div className="media-frame wide mt-s">
-                <img src="/images/svc-nuit.jpg" alt="" />
-              </div>
-            </div>
+          <Reveal delay={80}>
+            <Link href="/douala" className="city-card" style={{ minHeight: 340 }}>
+              <img src="/images/douala.jpg" alt="Douala" />
+              <span className="shade" />
+              <span className="txt">
+                <p className="eyebrow" style={{ color: "#ffd7c4" }}>Littoral</p>
+                <h3>Douala</h3>
+              </span>
+            </Link>
           </Reveal>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" style={{ paddingTop: 10 }}>
         <div className="container">
-          <Reveal className="section-head">
-            <p className="eyebrow">Nos villes</p>
-            <h2>Yaoundé et Douala, la même exigence.</h2>
+          <Reveal className="photo-cta">
+            <img src="/images/cta-wide.jpg" alt="" />
+            <span className="shade" />
+            <span className="txt">
+              <h2>Tout commence par une conversation.</h2>
+              <p className="mt-s" style={{ maxWidth: "36ch", color: "rgba(255,255,255,.86)" }}>
+                Parlons de la situation de votre proche — aujourd'hui.
+              </p>
+              <div className="btn-row mt-m">
+                <Link className="btn btn-primary" href="/demander-un-devis">
+                  Demander un accompagnement <Arrow />
+                </Link>
+                <a className="btn btn-light" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                  WhatsApp
+                </a>
+              </div>
+            </span>
           </Reveal>
-          <div className="grid-2">
-            <Reveal>
-              <Link href="/yaounde" className="city-card">
-                <img src="/images/svc-jour.jpg" alt="Accompagnement à Yaoundé" />
-                <span className="shade" />
-                <span className="txt">
-                  <p className="eyebrow" style={{ color: "#ffd7c4" }}>Capitale</p>
-                  <h3>Yaoundé</h3>
-                  <p className="small" style={{ color: "rgba(255,255,255,.8)" }}>
-                    Domicile et hôpital · En savoir plus
-                  </p>
-                </span>
-              </Link>
-            </Reveal>
-            <Reveal delay={80}>
-              <Link href="/douala" className="city-card">
-                <img src="/images/svc-24h.jpg" alt="Accompagnement à Douala" />
-                <span className="shade" />
-                <span className="txt">
-                  <p className="eyebrow" style={{ color: "#ffd7c4" }}>Littoral</p>
-                  <h3>Douala</h3>
-                  <p className="small" style={{ color: "rgba(255,255,255,.8)" }}>
-                    Domicile et hôpital · En savoir plus
-                  </p>
-                </span>
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" style={{ background: "var(--paper)" }}>
-        <div className="container">
-          <Reveal className="section-head">
-            <p className="eyebrow">Des familles nous font confiance</p>
-            <h2>Des mots simples, des situations réelles.</h2>
-          </Reveal>
-          <div className="grid-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} className="card-plain" delay={i * 80}>
-                <p className="quote">“{t.quote}”</p>
-                <p className="mt-m">
-                  <strong>{t.name}</strong>
-                  <span className="small" style={{ display: "block" }}>
-                    {t.role}
-                  </span>
-                </p>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -327,7 +367,7 @@ export default function HomePage() {
         <div className="container split">
           <Reveal>
             <p className="eyebrow">Questions fréquentes</p>
-            <h2>Ce que les familles demandent d'abord.</h2>
+            <h2>Foire aux questions</h2>
             <p className="lead mt-s">
               Akeva Care n'est pas une simple agence de garde-malades. Voici le
               cadre, clairement.
@@ -339,8 +379,6 @@ export default function HomePage() {
           <FAQList items={faqs.slice(0, 5)} />
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }

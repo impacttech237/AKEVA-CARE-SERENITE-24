@@ -53,8 +53,8 @@ export default function Page() {
           </div>
           <Reveal className="media-frame">
             <img
-              src="/images/hero-hands.jpg"
-              alt="Rester proche malgré la distance"
+              src="/images/diaspora.jpg"
+              alt="Organiser l'accompagnement depuis l'étranger"
               style={{ width: "100%", height: 420, objectFit: "cover" }}
             />
           </Reveal>

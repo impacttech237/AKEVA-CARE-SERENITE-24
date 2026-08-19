@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-import { Arrow, Phone, WhatsApp } from "./Icons";
+import { Arrow } from "./Icons";
 import { nav, site, whatsappLink } from "@/lib/site";
 
 export default function Header() {
@@ -71,20 +71,12 @@ export default function Header() {
 
           <div className="header-cta">
             <a
-              className="icon-btn"
-              href={`tel:${site.phoneTel}`}
-              aria-label="Appeler Akeva Care"
-            >
-              <Phone />
-            </a>
-            <a
-              className="icon-btn"
+              className="btn btn-ghost"
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
             >
-              <WhatsApp />
+              Contacter
             </a>
             <Link className="btn btn-primary" href="/demander-un-devis">
               Demander <Arrow />

@@ -24,7 +24,7 @@ export default function Page() {
         <div className="container grid-2">
           <Reveal>
             <Link href="/yaounde" className="city-card" style={{ minHeight: 380 }}>
-              <img src="/images/svc-jour.jpg" alt="Yaoundé" />
+              <img src="/images/yaounde.jpg" alt="Yaoundé" />
               <span className="shade" />
               <span className="txt">
                 <h2>Yaoundé</h2>
@@ -34,7 +34,7 @@ export default function Page() {
           </Reveal>
           <Reveal delay={80}>
             <Link href="/douala" className="city-card" style={{ minHeight: 380 }}>
-              <img src="/images/svc-24h.jpg" alt="Douala" />
+              <img src="/images/douala.jpg" alt="Douala" />
               <span className="shade" />
               <span className="txt">
                 <h2>Douala</h2>

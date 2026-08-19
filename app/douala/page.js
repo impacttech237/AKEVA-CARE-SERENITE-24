@@ -32,7 +32,7 @@ export default function Page() {
             </div>
           </div>
           <Reveal className="media-frame">
-            <img src="/images/svc-24h.jpg" alt="Accompagnement à Douala" style={{ width: "100%", height: 400, objectFit: "cover" }} />
+            <img src="/images/douala.jpg" alt="Douala" style={{ width: "100%", height: 400, objectFit: "cover" }} />
           </Reveal>
         </div>
       </section>
