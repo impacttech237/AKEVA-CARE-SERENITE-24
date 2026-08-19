@@ -32,47 +32,32 @@ const accompany = [
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
-        <div className="container-wide hero-grid">
-          <div>
-            <h1>
-              <span className="reveal-line">
-                <span>Votre proche a besoin</span>
+      <section className="hero-bleed">
+        <img
+          className="hero-bleed-img"
+          src="/images/hero-bleed.jpg"
+          alt="Accompagnante Akeva Care auprès d'une personne âgée à domicile"
+        />
+        <div className="hero-bleed-shade" />
+        <div className="container-wide hero-bleed-copy">
+          <h1>
+            <span className="reveal-line">
+              <span>Votre proche a besoin</span>
+            </span>
+            <span className="reveal-line">
+              <span>d'un accompagnement fiable ?</span>
+            </span>
+            <span className="reveal-line">
+              <span>
+                Nous sommes là, chez <em>Akeva Care</em>
               </span>
-              <span className="reveal-line">
-                <span>d'un accompagnement fiable ?</span>
-              </span>
-              <span className="reveal-line italic" style={{ color: "var(--terra)", marginTop: 10 }}>
-                <span>Nous sommes là.</span>
-              </span>
-            </h1>
-            <p className="lead hero-copy">
-              Akeva Care Sérénité 24 accompagne les personnes âgées, les
-              personnes dépendantes et les patients à domicile ou à l'hôpital,
-              avec une approche professionnelle, humaine et personnalisée.
-            </p>
-            <div className="btn-row">
-              <Link className="btn btn-primary" href="/demander-un-devis">
-                Demander un accompagnement <Arrow />
-              </Link>
-              <a
-                className="btn btn-ghost"
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contacter Akeva Care
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-photo">
-            <img
-              src="/images/hero-home.jpg"
-              alt="Accompagnante Akeva Care auprès d'une personne âgée à domicile"
-            />
-            <span className="float-badge">Yaoundé · Douala · 24h/24</span>
-          </div>
+            </span>
+          </h1>
+          <p>
+            Akeva Care Sérénité 24 accompagne les personnes âgées, les
+            personnes dépendantes et les patients à domicile ou à l'hôpital,
+            avec une approche professionnelle, humaine et personnalisée.
+          </p>
         </div>
       </section>
 

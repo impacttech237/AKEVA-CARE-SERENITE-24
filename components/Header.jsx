@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-import { Arrow } from "./Icons";
 import { nav, site, whatsappLink } from "@/lib/site";
+
+const pillNav = nav.filter((item) =>
+  ["Services", "Familles", "Diaspora", "Villes"].includes(item.label)
+);
 
 export default function Header() {
   const pathname = usePathname();
@@ -14,7 +17,7 @@ export default function Header() {
   const [acc, setAcc] = useState(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -34,57 +37,48 @@ export default function Header() {
 
   return (
     <>
-      <header className={`header ${scrolled || open ? "is-scrolled" : ""}`}>
+      <header className={`header ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
         <div className="header-inner">
-          <Link href="/" aria-label="Akeva Care Sérénité 24 — accueil">
-            <Logo />
+          <Link className="logo-pill" href="/" aria-label="Akeva Care Sérénité 24 — accueil">
+            <Logo compact />
           </Link>
 
-          <nav className="nav-desktop" aria-label="Navigation principale">
-            {nav.map((item) => (
-              <div className="nav-item" key={item.href}>
-                <Link className="nav-link" href={item.href}>
-                  {item.label}
+          <div className="nav-pill">
+            <nav aria-label="Navigation principale">
+              {pillNav.map((item) => (
+                <div className="nav-item" key={item.href}>
+                  <Link className="nav-link" href={item.href}>
+                    {item.label}
+                    {item.children && (
+                      <svg className="caret" viewBox="0 0 10 10" aria-hidden="true">
+                        <path
+                          d="M2 3.5 5 6.5 8 3.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.4"
+                        />
+                      </svg>
+                    )}
+                  </Link>
                   {item.children && (
-                    <svg className="caret" viewBox="0 0 10 10" aria-hidden="true">
-                      <path
-                        d="M2 3.5 5 6.5 8 3.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.4"
-                      />
-                    </svg>
+                    <div className="dropdown">
+                      {item.children.map((c) => (
+                        <Link key={c.href} href={c.href}>
+                          {c.label}
+                        </Link>
+                      ))}
+                    </div>
                   )}
-                </Link>
-                {item.children && (
-                  <div className="dropdown">
-                    {item.children.map((c) => (
-                      <Link key={c.href} href={c.href}>
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-
-          <div className="header-cta">
-            <a
-              className="btn btn-ghost"
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contacter
-            </a>
-            <Link className="btn btn-primary" href="/demander-un-devis">
-              Demander <Arrow />
+                </div>
+              ))}
+            </nav>
+            <Link className="btn btn-primary nav-cta" href="/demander-un-devis">
+              Demander
             </Link>
           </div>
 
           <button
-            className={`burger ${open ? "is-open" : ""}`}
+            className={`burger-pill ${open ? "is-open" : ""}`}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
