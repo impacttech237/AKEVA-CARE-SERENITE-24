@@ -40,7 +40,11 @@ html,
 body {
   background: var(--cream);
   color: var(--ink);
-  font-family: "Outfit Variable", Outfit, system-ui, sans-serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -137,37 +141,45 @@ ol {
 
 h1,
 .h1 {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
-  font-weight: 500;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
-  letter-spacing: -0.035em;
+  font-weight: 560;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  letter-spacing: -0.04em;
   line-height: 1.02;
   font-size: clamp(2.35rem, 7.4vw, 5.6rem);
 }
 
 h2,
 .h2 {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-variation-settings: "wdth" 100;
+  letter-spacing: -0.035em;
   line-height: 1.08;
   font-size: clamp(1.85rem, 4.4vw, 3.5rem);
 }
 
 h3,
 .h3 {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-variation-settings: "wdth" 100;
+  letter-spacing: -0.03em;
   line-height: 1.2;
   font-size: clamp(1.25rem, 2vw, 1.7rem);
 }
 
 .italic {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
+  letter-spacing: -0.03em;
 }
 
 .lead {
@@ -311,7 +323,7 @@ h3,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1.15rem;
   letter-spacing: -0.03em;
   font-weight: 550;
@@ -352,7 +364,7 @@ h3,
 }
 
 .logo-text strong {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1.12rem;
   font-weight: 550;
   letter-spacing: -0.03em;
@@ -527,7 +539,7 @@ h3,
   width: 100%;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1.45rem;
   letter-spacing: -0.02em;
 }
@@ -542,7 +554,7 @@ h3,
 }
 
 .mobile-sub a {
-  font-family: "Outfit Variable", Outfit, sans-serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1rem;
   padding: 10px 0;
   border: 0;
@@ -606,7 +618,7 @@ h3,
 }
 
 .hero-bleed h1 em {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-style: normal;
   color: var(--terra);
 }
@@ -780,14 +792,14 @@ h3,
 
 .why-item strong {
   display: block;
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1.15rem;
   font-weight: 500;
   margin-bottom: 4px;
 }
 
 .num {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-style: italic;
   color: var(--terra-soft);
   font-size: 1.1rem;
@@ -805,7 +817,7 @@ h3,
 }
 
 .step .n {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-style: italic;
   font-size: 1.6rem;
   color: var(--terra);
@@ -867,7 +879,7 @@ h3,
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1.08rem;
   letter-spacing: -0.02em;
 }
@@ -969,7 +981,7 @@ h3,
 
 /* ---------- page hero ---------- */
 .page-hero {
-  padding: calc(var(--header) + 48px) 0 48px;
+  padding: 120px 0 48px;
 }
 
 .page-hero h1 {
@@ -1258,7 +1270,7 @@ h3,
 }
 
 .manifesto p {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: clamp(1.45rem, 3.2vw, 2.35rem);
   letter-spacing: -0.03em;
   line-height: 1.28;
@@ -1353,7 +1365,7 @@ h3,
 }
 
 .story-bottom em {
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-style: italic;
   font-weight: 400;
   color: var(--terra-soft);
@@ -1375,7 +1387,7 @@ h3,
 }
 
 .stat-card strong {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   letter-spacing: -0.045em;
   line-height: 0.95;
@@ -1432,7 +1444,7 @@ h3,
   gap: 16px;
   padding: 18px 0;
   border-top: 1px solid var(--line);
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
 }
@@ -1522,7 +1534,7 @@ h3,
 
 .stat strong {
   display: block;
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: clamp(2rem, 4vw, 3.2rem);
   letter-spacing: -0.04em;
   line-height: 1;
@@ -1537,7 +1549,7 @@ h3,
 
 /* ---------- quote ---------- */
 .quote {
-  font-family: "Fraunces Variable", Fraunces, Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-size: clamp(1.3rem, 2.4vw, 1.8rem);
   letter-spacing: -0.03em;
   line-height: 1.25;
@@ -1556,7 +1568,7 @@ h3,
   gap: 48px;
   width: max-content;
   animation: marquee 32s linear infinite;
-  font-family: "Instrument Serif", Georgia, serif;
+  font-family: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
   font-style: italic;
   font-size: 1.25rem;
   color: var(--ink-soft);

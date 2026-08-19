@@ -1,7 +1,4 @@
-import "@fontsource-variable/fraunces/wght.css";
-import "@fontsource-variable/outfit";
-import "@fontsource/instrument-serif/400.css";
-import "@fontsource/instrument-serif/400-italic.css";
+import "@fontsource-variable/bricolage-grotesque/standard.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
