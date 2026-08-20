@@ -7,3 +7,5 @@ out
 .env*.local
 .vercel
 image-search
+.wrangler
+.dev.vars
