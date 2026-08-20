@@ -60,6 +60,8 @@ Déploiement :
 npm run deploy
 ```
 
+> **Windows, dossier avec espaces/accents** (comme celui-ci : `PROJET WEB`, `Sérénité`) : le bundler d'`@opennextjs/cloudflare` plante sur ces chemins (bug connu du portage Windows). Utiliser `npm run deploy:windows` à la place — il copie le projet dans `C:\akeva-deploy-build` (chemin simple) et déploie depuis là.
+
 ## Pages publiques
 
 Accueil, services (9 pages), familles, fonctionnement, formules, devis, FAQ, diaspora, villes (Yaoundé, Douala), à propos, blog, mentions, confidentialité.
