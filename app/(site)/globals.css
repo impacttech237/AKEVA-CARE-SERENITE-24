@@ -315,7 +315,6 @@ h3,
 .logo-pill {
   display: inline-flex;
   align-items: center;
-  background: #050505;
   padding: 4px 14px 4px 10px;
   flex-shrink: 0;
 }
@@ -933,7 +932,7 @@ h3,
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: #050505;
+  background: var(--white);
   display: grid;
   place-items: center;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
