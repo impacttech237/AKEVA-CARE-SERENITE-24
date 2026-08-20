@@ -84,6 +84,12 @@ export default async function Footer() {
               {" · "}
               <Link href="/confidentialite">Confidentialité</Link>
             </span>
+            <span>
+              Développé par{" "}
+              <a href="https://impacttech237.com/" target="_blank" rel="noopener noreferrer">
+                Impact Tech
+              </a>
+            </span>
           </div>
         </div>
       </div>
