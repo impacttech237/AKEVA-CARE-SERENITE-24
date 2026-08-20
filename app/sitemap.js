@@ -8,7 +8,7 @@ export default function sitemap() {
     lastModified: now,
   }));
   const posts = articles.map((a) => ({
-    url: `${site.url}/conseils/${a.slug}`,
+    url: `${site.url}/blog/${a.slug}`,
     lastModified: now,
   }));
   return [...pages, ...posts];

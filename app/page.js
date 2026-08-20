@@ -4,7 +4,7 @@ import FAQList from "@/components/FAQList";
 import { Arrow } from "@/components/Icons";
 import { site, whatsappLink } from "@/lib/site";
 import { services } from "@/lib/services";
-import { faqs, steps, testimonials } from "@/lib/content";
+import { articles, faqs, steps, testimonials } from "@/lib/content";
 
 const accompany = [
   {
@@ -345,6 +345,41 @@ export default function HomePage() {
               </div>
             </span>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 10 }}>
+        <div className="container">
+          <Reveal className="section-head">
+            <p className="eyebrow">Blog</p>
+            <h2>Conseils pour les familles</h2>
+          </Reveal>
+          <div className="grid-3">
+            {articles.slice(0, 3).map((a, i) => (
+              <Reveal key={a.slug} delay={i * 70}>
+                <article className="card">
+                  <div className="card-media">
+                    <img src={a.image} alt="" />
+                  </div>
+                  <div className="card-body">
+                    <p className="small">
+                      {a.category} · {a.date}
+                    </p>
+                    <h3 className="mt-s">{a.title}</h3>
+                    <p>{a.excerpt}</p>
+                    <Link className="link-more" href={`/blog/${a.slug}`}>
+                      Lire l'article <Arrow />
+                    </Link>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-l">
+            <Link className="btn btn-ghost" href="/blog">
+              Tout le blog <Arrow />
+            </Link>
+          </div>
         </div>
       </section>
 

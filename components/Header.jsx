@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import { nav, site, whatsappLink } from "@/lib/site";
 
 const pillNav = nav.filter((item) =>
-  ["Services", "Familles", "Diaspora", "Villes"].includes(item.label)
+  ["Services", "Familles", "Diaspora", "Blog"].includes(item.label)
 );
 
 export default function Header() {

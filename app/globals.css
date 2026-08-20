@@ -897,6 +897,11 @@ h3,
   padding: 96px 0 28px;
   background: transparent;
   color: #efe6da;
+  overflow: visible;
+}
+
+.footer .container {
+  overflow: visible;
 }
 
 .footer-card {
@@ -1869,6 +1874,52 @@ h3,
 .btn-send:hover {
   transform: translateY(-2px);
   background: #1c231f;
+}
+
+.blog-featured {
+  display: grid;
+  gap: 22px;
+  background: #fff;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.blog-featured-media {
+  min-height: 240px;
+}
+
+.blog-featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 240px;
+}
+
+.blog-featured-copy {
+  padding: 8px 24px 28px;
+}
+
+.blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.blog-chip {
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  font-size: 0.88rem;
+  font-weight: 550;
+}
+
+.blog-chip.is-on {
+  background: var(--forest);
+  color: #fff;
+  border-color: var(--forest);
 }
 
 @media (min-width: 760px) {
