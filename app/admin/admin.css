@@ -1,0 +1,378 @@
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f4f1;
+  color: #1f1b16;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.admin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #201a14;
+  color: #f3eee6;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-sidebar h2 {
+  font-size: 1.05rem;
+  margin: 0 0 20px;
+  padding: 0 10px;
+}
+
+.admin-sidebar a {
+  color: #f3eee6;
+  text-decoration: none;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a.is-active {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.admin-sidebar .admin-sidebar-group {
+  margin-top: 16px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  padding: 0 10px;
+}
+
+.admin-sidebar form {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.admin-sidebar button {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #f3eee6;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 32px 40px;
+  max-width: 900px;
+}
+
+.admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-panel-head h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.admin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #e7e1d8;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.92rem;
+}
+
+.admin-list-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-form {
+  background: #fff;
+  border: 1px solid #e7e1d8;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a4237;
+}
+
+.admin-field input,
+.admin-field textarea,
+.admin-form input[type="text"],
+.admin-form input[type="number"] {
+  border: 1px solid #d9d1c3;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  background: #fffdfa;
+}
+
+.admin-field textarea {
+  resize: vertical;
+}
+
+.admin-hint {
+  font-size: 0.78rem;
+  color: #7a7060;
+  margin: 0;
+}
+
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.admin-list-row,
+.admin-object-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-object-row {
+  flex-wrap: wrap;
+  border: 1px dashed #d9d1c3;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.admin-object-row input {
+  flex: 1;
+  min-width: 140px;
+}
+
+.admin-list-row input {
+  flex: 1;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.admin-btn-primary {
+  background: #b3502f;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.admin-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.admin-btn-ghost {
+  background: transparent;
+  border: 1px solid #d9d1c3;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.admin-btn-small {
+  background: #efe9e0;
+  border: 1px solid #d9d1c3;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.admin-btn-danger {
+  background: #fbe4de;
+  border-color: #e7b6a8;
+  color: #8a2f18;
+}
+
+.admin-btn-icon {
+  background: transparent;
+  border: none;
+  color: #a34;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+}
+
+.admin-muted {
+  color: #7a7060;
+  font-size: 0.9rem;
+}
+
+.admin-error {
+  background: #fbe4de;
+  border: 1px solid #e7b6a8;
+  color: #8a2f18;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.admin-image-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-image-field input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.admin-image-preview {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #d9d1c3;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.admin-stat-card {
+  background: #fff;
+  border: 1px solid #e7e1d8;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.admin-stat-card strong {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.admin-stat-card span {
+  font-size: 0.82rem;
+  color: #7a7060;
+}
+
+.admin-login-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #201a14;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.admin-login-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-login-card h1 {
+  font-size: 1.2rem;
+  margin: 0 0 6px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #e7e1d8;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.88rem;
+}
+
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid #efe9e0;
+  vertical-align: top;
+}
+
+.admin-table select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #d9d1c3;
+}
+
+.admin-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.admin-media-item {
+  background: #fff;
+  border: 1px solid #e7e1d8;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-media-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.admin-media-item .admin-media-actions {
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-media-item .admin-media-url {
+  font-size: 0.7rem;
+  color: #7a7060;
+  word-break: break-all;
+  padding: 0 6px;
+}

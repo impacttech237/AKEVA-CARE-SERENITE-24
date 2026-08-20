@@ -3,16 +3,17 @@ import Reveal from "./Reveal";
 import QuoteForm from "./QuoteForm";
 import CTABanner from "./CTABanner";
 import { Arrow } from "./Icons";
-import { site, whatsappLink } from "@/lib/site";
-import { steps } from "@/lib/content";
+import { whatsappLink } from "@/lib/site";
+import { getSite, getSteps, getServices } from "@/lib/data";
 
-export default function ServicePage({ service }) {
+export default async function ServicePage({ service }) {
+  const [site, steps, services] = await Promise.all([getSite(), getSteps(), getServices()]);
   return (
     <>
       <section className="page-hero">
         <div className="container">
           <div className="sticky-cta">
-            <a className="btn btn-primary" href={whatsappLink(service.whatsapp)} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-primary" href={whatsappLink(site.whatsapp, service.whatsapp)} target="_blank" rel="noopener noreferrer">
               {service.cta} <Arrow />
             </a>
           </div>
@@ -30,7 +31,7 @@ export default function ServicePage({ service }) {
             <Link className="btn btn-primary" href="/demander-un-devis">
               {service.cta} <Arrow />
             </Link>
-            <a className="btn btn-ghost" href={whatsappLink(service.whatsapp)} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-ghost" href={whatsappLink(site.whatsapp, service.whatsapp)} target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>
           </div>
@@ -116,7 +117,7 @@ export default function ServicePage({ service }) {
               {site.phoneDisplay} ou écrire sur WhatsApp.
             </p>
           </div>
-          <QuoteForm presetService={service.title} />
+          <QuoteForm presetService={service.title} site={site} services={services} />
         </div>
       </section>
 

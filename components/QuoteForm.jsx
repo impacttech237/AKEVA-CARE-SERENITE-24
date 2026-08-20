@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { site, whatsappLink } from "@/lib/site";
-import { services } from "@/lib/services";
+import { whatsappLink } from "@/lib/site";
 
 const initial = {
   name: "",
@@ -16,7 +15,7 @@ const initial = {
   contact: "WhatsApp",
 };
 
-export default function QuoteForm({ presetService = "" }) {
+export default function QuoteForm({ presetService = "", site, services }) {
   const [data, setData] = useState({
     ...initial,
     service: presetService || initial.service,
@@ -45,7 +44,25 @@ export default function QuoteForm({ presetService = "" }) {
       .filter(Boolean)
       .join("\n");
 
-    window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
+    // Enregistrement du lead en base, en plus de l'ouverture WhatsApp — best-effort,
+    // ne doit jamais bloquer l'envoi WhatsApp si l'API est indisponible.
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        city: data.city,
+        service: data.service,
+        relation: data.relation,
+        diaspora: data.diaspora,
+        contact_pref: data.contact,
+        message: data.message,
+      }),
+    }).catch(() => {});
+
+    window.open(whatsappLink(site.whatsapp, text), "_blank", "noopener,noreferrer");
     setSent(true);
   };
 
@@ -57,7 +74,7 @@ export default function QuoteForm({ presetService = "" }) {
           Si rien ne s'affiche, appelez le {site.phoneDisplay} ou écrivez à{" "}
           {site.email}.
         </p>
-        <a className="btn-send" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+        <a className="btn-send" href={whatsappLink(site.whatsapp)} target="_blank" rel="noopener noreferrer">
           <SendIcon />
           Ouvrir WhatsApp
         </a>

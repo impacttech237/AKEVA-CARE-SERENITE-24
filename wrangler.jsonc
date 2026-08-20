@@ -1,11 +1,24 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "akeva-care-serenite-24",
+  "main": ".open-next/worker.js",
   "compatibility_date": "2025-01-01",
-  "main": "worker/index.js",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
-    "directory": "./out",
-    "binding": "ASSETS",
-    "not_found_handling": "404-page"
-  }
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "akeva-care-db",
+      "database_id": "ce044e8e-616e-4a61-a919-8e30c941b32b"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "akeva-care-media"
+    }
+  ]
 }

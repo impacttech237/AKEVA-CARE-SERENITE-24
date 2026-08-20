@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { site, whatsappLink } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
+import { getSite } from "@/lib/data";
 
-export default function Footer() {
+export default async function Footer() {
+  const site = await getSite();
   return (
     <footer className="footer">
       <div className="container">
@@ -37,7 +39,7 @@ export default function Footer() {
               </Link>
               <a
                 className="btn-foot"
-                href={whatsappLink()}
+                href={whatsappLink(site.whatsapp)}
                 target="_blank"
                 rel="noopener noreferrer"
               >

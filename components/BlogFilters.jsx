@@ -2,10 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { articleCategories } from "@/lib/content";
 import { Arrow } from "./Icons";
 
-export default function BlogFilters({ articles }) {
+export default function BlogFilters({ articles, categories }) {
   const [cat, setCat] = useState("Tous");
   const list = useMemo(
     () => (cat === "Tous" ? articles : articles.filter((a) => a.category === cat)),
@@ -15,7 +14,7 @@ export default function BlogFilters({ articles }) {
   return (
     <>
       <div className="blog-filters">
-        {articleCategories.map((c) => (
+        {categories.map((c) => (
           <button
             key={c}
             className={`blog-chip ${cat === c ? "is-on" : ""}`}

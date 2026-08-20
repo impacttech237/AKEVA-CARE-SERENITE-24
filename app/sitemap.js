@@ -1,7 +1,10 @@
-import { routes, site } from "@/lib/site";
-import { articles } from "@/lib/content";
+import { routes } from "@/lib/site";
+import { getSite, getArticles } from "@/lib/data";
 
-export default function sitemap() {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap() {
+  const [site, articles] = await Promise.all([getSite(), getArticles()]);
   const now = new Date();
   const pages = routes.map((path) => ({
     url: `${site.url}${path}`,

@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-import { nav, site, whatsappLink } from "@/lib/site";
+import { nav, whatsappLink } from "@/lib/site";
 
 const pillNav = nav.filter((item) =>
   ["Services", "Familles", "Diaspora", "Blog"].includes(item.label)
 );
 
-export default function Header() {
+export default function Header({ site }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -119,7 +119,7 @@ export default function Header() {
           <Link className="btn btn-primary" href="/demander-un-devis">
             Demander un accompagnement
           </Link>
-          <a className="btn btn-whatsapp" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn-whatsapp" href={whatsappLink(site.whatsapp)} target="_blank" rel="noopener noreferrer">
             WhatsApp
           </a>
           <a className="btn btn-ghost" href={`tel:${site.phoneTel}`}>

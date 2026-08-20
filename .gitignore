@@ -1,5 +1,6 @@
 node_modules
 .next
+.open-next
 out
 .DS_Store
 *.log
@@ -9,3 +10,4 @@ out
 image-search
 .wrangler
 .dev.vars
+db/admin-seed.sql
